@@ -1,0 +1,19 @@
+
+.box{
+    border-radius: 16px;
+    margin: 30px;
+    height: 100px;
+    width: 200px;
+    background-color: #42b0f5;
+    text-align: center;
+}
+
+
+.box.animation1 {
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    margin-left: 50% !important;
+  }

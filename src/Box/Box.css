@@ -1,0 +1,15 @@
+.box {
+    width: 200px;
+    height: 70px;
+    background-color: #42b0f5;
+    color: #282c34;
+    position: relative;
+    animation-name: node-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  
