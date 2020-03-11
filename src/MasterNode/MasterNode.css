@@ -1,9 +1,10 @@
 .master_box {
     width: 170px;
-    height: 140px;
+    height: 100px;
     background-color: #e2905d;
     color: #282c34;
     position: relative;
+    left: -300px;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;

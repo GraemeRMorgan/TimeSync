@@ -11,22 +11,12 @@ export class MasterNode extends React.Component {
     render() {
         return (
             <div>
-                <AnimateKeyframes
-                    play
-                    pause={this.state.pause}
-                    duration={3}
-                    keyframes={[
-                        'transform: translateX(-300px)',
-                        'transform: translateX(300px)',
-                        'transform: translateX(-300px)',
-                    ]}
-                    iterationCount="infinite"
-                    easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
+               
 
-                >
+                
 
                     <Box className='master_box'/>
-                </AnimateKeyframes>
+                
 
             
             </div>
