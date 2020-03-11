@@ -4,13 +4,8 @@ import { AnimateKeyframes } from 'react-simple-animate';
 
 export class Box extends React.Component {
 
-    //state = { pause: false };
     constructor(props) {
         super(props);
-        //this.state = { pause: false };
-
-        //this.handleClick = this.handleClick.bind(this);
-
         this.state = { pause: false };
         this.togglePause = this.togglePause.bind(this);
     }
@@ -21,9 +16,6 @@ export class Box extends React.Component {
         console.log("worked");
     }
 
-
-
-    //state = { play: true };
     state = { pause: false };
 
 
@@ -32,7 +24,7 @@ export class Box extends React.Component {
             <div>
                 <AnimateKeyframes
                     play
-                    pause = {this.state.pause}
+                    pause={this.state.pause}
                     delay={this.props.delay}
                     duration={3}
                     keyframes={[
@@ -42,16 +34,14 @@ export class Box extends React.Component {
                     ]}
                     iterationCount="infinite"
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
-                    
+
                 >
-                                    <button className={this.props.className} onClick={this.togglePause}></button>
+                    <button className={this.props.className} onClick={this.togglePause}></button>
 
                 </AnimateKeyframes>
+               
             </div>
         )
     }
+
 }
-
-
-{/* <div className={this.props.className}>
-</div> */}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { ChildNodes } from '../ChildNodes/ChildNodes';
 import { MasterNode } from '../MasterNode/MasterNode';
+import { Sensor } from '../Sensor/Sensor'
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <ChildNodes className="box_1" delay={.3}/>
           <ChildNodes className="box_2" delay={.5}/>
           <ChildNodes className="box_3" delay={.7}/>
+          <Sensor />
         </header>
       </div>
     )
