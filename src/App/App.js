@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Clock } from '../Clock/Clock';
-import { PauseButton } from '../PauseButton/PauseButton';
-import { TimeNode } from '../TimeNode/TimeNode';
-import { Motion } from '../Motion/Motion';
+import { ChildNodes } from '../ChildNodes/ChildNodes';
+import { MasterNode } from '../MasterNode/MasterNode';
 
 class App extends React.Component {
   render() {
@@ -11,13 +9,9 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1>Time Synchronization</h1>
-          <Motion />
-          <PauseButton />
-          <TimeNode />
-          
-          
-          
-
+          <MasterNode />
+          <hr className="coolLine"></hr>
+          <ChildNodes />
         </header>
       </div>
     )

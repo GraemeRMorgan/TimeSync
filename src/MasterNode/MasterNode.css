@@ -1,0 +1,17 @@
+.master_box {
+    width: 170px;
+    height: 140px;
+    background-color: #e2905d;
+    color: #282c34;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+
+  hr.coolLine{
+    border-top: 1px solid #8c8b8b;
+    width: 600px;
+}

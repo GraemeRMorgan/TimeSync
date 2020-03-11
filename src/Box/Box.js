@@ -1,10 +1,12 @@
 import React from 'react';
+import './Box.css';
 
 export class Box extends React.Component {
+
+
     render() {
         return(
-            <div className='box'>
-                <p>Node 1</p>
+            <div className={this.props.class}>
             </div>
         )
     }
