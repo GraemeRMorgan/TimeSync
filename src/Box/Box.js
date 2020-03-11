@@ -3,10 +3,12 @@ import './Box.css';
 
 export class Box extends React.Component {
 
+    state = { pause: false };
+
 
     render() {
-        return(
-            <div className={this.props.class}>
+        return (
+            <div className={this.props.className}>
             </div>
         )
     }

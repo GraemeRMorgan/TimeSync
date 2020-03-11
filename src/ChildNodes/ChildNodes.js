@@ -19,17 +19,19 @@ export class ChildNodes extends React.Component {
                 <AnimateKeyframes
                     play
                     pause={this.state.pause}
+                    //pause = {this.changeState(pause)}
+                    delay={this.props.delay}
                     duration={3}
                     keyframes={[
-                        'transform: translateX(-300px)',
-                        'transform: translateX(300px)',
-                        'transform: translateX(-300px)',
+                        'transform: translateX(0px)',
+                        'transform: translateX(600px)',
+                        'transform: translateX(0px)',
                     ]}
                     iterationCount="infinite"
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
                     
                 >
-                    <Box class='box'/>
+                    <Box className={this.props.className} />
                 </AnimateKeyframes>
                 <button onClick={() => this.setState(({ pause }) => ({ pause: !pause }))}>
                     Play/Pause
@@ -39,4 +41,3 @@ export class ChildNodes extends React.Component {
     }
 }
 
-//<button onClick={() => this.setState(({ pause }) => ({ pause: !pause }))}>

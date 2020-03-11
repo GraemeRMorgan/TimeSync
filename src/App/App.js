@@ -11,7 +11,9 @@ class App extends React.Component {
           <h1>Time Synchronization</h1>
           <MasterNode />
           <hr className="coolLine"></hr>
-          <ChildNodes />
+          <ChildNodes className="box_1" delay={.3}/>
+          <ChildNodes className="box_2" delay={.5}/>
+          <ChildNodes className="box_3" delay={.7}/>
         </header>
       </div>
     )

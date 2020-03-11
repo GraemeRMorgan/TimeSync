@@ -25,7 +25,7 @@ export class MasterNode extends React.Component {
 
                 >
 
-                    <Box class='master_box'/>
+                    <Box className='master_box'/>
                 </AnimateKeyframes>
 
             

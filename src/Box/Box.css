@@ -1,24 +1,54 @@
-.box {
+.box_1 {
     width: 130px;
     height: 100px;
     background-color: #42b0f5;
     color: #282c34;
     position: relative;
+    left:-300px;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
     border-radius: 25px;
   }
 
-  .master_box{
-    width: 135px;
-    height: 105px;
-    background-color: #e8b762;
+  .box_2 {
+    width: 130px;
+    height: 100px;
+    background-color: #dd6ce3;
     color: #282c34;
     position: relative;
+    left: -300px;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
     border-radius: 25px;
   }
+
+  .box_3 {
+    width: 130px;
+    height: 100px;
+    background-color: #8ce46e;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+  .box_4 {
+    width: 130px;
+    height: 100px;
+    background-color: #b352ee;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+
+
   
