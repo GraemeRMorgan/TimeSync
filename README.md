@@ -18,12 +18,12 @@ npm start
 ```
 
 ### In Progress
-I still need to include a way to detect if the nodes are synchronized. I am considering 2 options:
+* I still need to include a way to detect if the nodes are synchronized. I am considering 2 options:
 1. Have a `<div>` in the middle of the screen that acts as a 'collision detector'. If all nodes are colliding with the `<div>` at the same time and moving in the same direction, then it is assumed that they are synchronized with a acceptable level of drift. 
 2. Calculating the position of each node throughout the loop. If all nodes are in similar positions for a determined length of time, and are traveling in the same direction, it is assumed they are synchronized with an acceptable level of drift. 
-3. Implement a random delay on individual nodes to simulate RTT/2.
-4. Implement levels. There may only be 2 levels. One with the delay and one with no delay. Time permitting.
-5. Implement a timer.
+* Implement a random delay on individual nodes to simulate RTT/2.
+* Implement levels. There may only be 2 levels. One with the delay and one with no delay. Time permitting.
+* Implement a timer.
 
 
 
