@@ -15,7 +15,7 @@ export class Box extends React.Component {
     togglePause() {
         const pauseState = this.state.pause == true ? false : true;
         this.setState({ pause: pauseState });
-        console.log("worked");
+        console.log("Set Node Pause State in <Box />.");
     }
 
     //Trying to see if I can get a global pause to work.
@@ -48,7 +48,7 @@ export class Box extends React.Component {
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
 
                 >
-                    <div className={this.props.className} onClick={this.togglePause} pauseNow={this.turnOnPause}></div>
+                    <div className={this.props.className} onClick={this.togglePause} ></div>
 
                 </AnimateKeyframes>
                 

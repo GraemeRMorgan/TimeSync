@@ -1,0 +1,92 @@
+
+.box_1 {
+    width: 130px;
+    height: 50px;
+    background-color: #922FFB;
+    color: #282c34;
+    position: relative;
+    left:-300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+  .temp_box {
+    width: 130px;
+    height: 50px;
+    background-color: rgb(251, 47, 159);
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+  .animated_node{
+    width: 130px;
+    height: 50px;
+    background-color: rgb(47, 251, 105);
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+  .static_node{
+    width: 130px;
+    height: 50px;
+    background-color: rgb(255, 47, 170);
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+  .box_2 {
+    width: 130px;
+    height: 50px;
+    background-color: #922FFB;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+  .box_3 {
+    width: 130px;
+    height: 50px;
+    background-color: #922FFB;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+  .box_4 {
+    width: 130px;
+    height: 50px;
+    background-color: #922FFB;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+
+
+  

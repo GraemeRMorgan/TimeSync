@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './NodeDelay.css';
 import { ChildNodes } from '../ChildNodes/ChildNodes';
 import { MasterNode } from '../MasterNode/MasterNode';
 import { Sensor } from '../Sensor/Sensor'
 import { Box } from '../Box/Box';
+import { BoxDelay } from '../BoxDelay/BoxDelay';
 
 
 /**
@@ -23,7 +24,7 @@ import { Box } from '../Box/Box';
  * classes?
  * 3.) How do we get the pause delay to work?
  */
-class App extends React.Component {
+class NodeDelay extends React.Component {
 
   getLocation(node){
     let x = node.offsetLeft;
@@ -35,12 +36,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Time Synchronization</h1>
+          <h1>Time Synchronization with Delay</h1>
           <MasterNode />
           <hr className="coolLine"></hr>
-          <ChildNodes className="box_1" delay={.3} />
-          <ChildNodes className="box_2" delay={.5}/>
-          <ChildNodes className="box_3" delay={.7}/>
+          <BoxDelay className="box_1" delay={.3}/>
+          <BoxDelay className="box_2" delay={.5}/>
+          <BoxDelay className="box_3" delay={.7}/>
           <Sensor />
           <Box turnOnPause={true}/>
         </header>
@@ -52,4 +53,4 @@ class App extends React.Component {
 
 
 
-export default App;
+export default NodeDelay;
