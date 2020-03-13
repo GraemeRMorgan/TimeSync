@@ -20,13 +20,14 @@ header {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #40F78F;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #314cb8 0%, rgb(120, 27, 191) 100%);
+  /*background: linear-gradient(180deg, #314cb8 0%, rgb(120, 27, 191) 100%);*/
+  background: #1A212B;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -51,6 +52,6 @@ body {
 }
 
 hr.coolLine{
-  border-top: 1px solid #8c8b8b;
-  width: 600px;
+  border-top: 1px solid #572DFB;
+  width: 720px;
 }

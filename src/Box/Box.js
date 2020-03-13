@@ -1,6 +1,7 @@
 import React from 'react';
 import './Box.css';
 import { AnimateKeyframes } from 'react-simple-animate';
+import { Sensor } from '../Sensor/Sensor';
 
 export class Box extends React.Component {
 
@@ -8,6 +9,7 @@ export class Box extends React.Component {
         super(props);
         this.state = { pause: false };
         this.togglePause = this.togglePause.bind(this);
+        this.turnOnPause = this.turnOnPause.bind(this);
     }
 
     togglePause() {
@@ -16,15 +18,25 @@ export class Box extends React.Component {
         console.log("worked");
     }
 
-    state = { pause: false };
+    //Trying to see if I can get a global pause to work.
+    turnOnPause(){
+        this.setState({pause:true});
+    }
 
+    //state = { pause: false };
 
+    /**
+     * This method should monitor the position of the div and send this info
+     * via props to <Sensor />. In that class we can monitor all of the collisions
+     * to see if 
+     */
     render() {
         return (
             <div>
                 <AnimateKeyframes
                     play
                     pause={this.state.pause}
+                    //pause={this.togglePause}
                     delay={this.props.delay}
                     duration={3}
                     keyframes={[
@@ -36,10 +48,11 @@ export class Box extends React.Component {
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
 
                 >
-                    <button className={this.props.className} onClick={this.togglePause}></button>
+                    <div className={this.props.className} onClick={this.togglePause} pauseNow={this.turnOnPause}></div>
 
                 </AnimateKeyframes>
-               
+                
+                <Sensor />
             </div>
         )
     }
