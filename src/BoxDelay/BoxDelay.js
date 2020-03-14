@@ -2,6 +2,7 @@ import React from 'react';
 import './BoxDelay.css';
 import { AnimateKeyframes } from 'react-simple-animate';
 import { Sensor } from '../Sensor/Sensor';
+import anime from 'animejs';
 
 export class BoxDelay extends React.Component {
 
@@ -13,6 +14,7 @@ export class BoxDelay extends React.Component {
         this.loadingDiv = this.loadingDiv.bind(this);
         this.delayDiv = this.delayDiv.bind(this);
         this.resumeAnimation = this.resumeAnimation.bind(this);
+        this.animeTest = this.animeTest.bind(this);
     }
 
 
@@ -31,7 +33,7 @@ export class BoxDelay extends React.Component {
         }else{
             //pauseState = false;
             this.delayDiv();
-            this.loadingDiv();
+            //this.loadingDiv();
         }
 
         this.setState({ pause: pauseState });
@@ -39,26 +41,95 @@ export class BoxDelay extends React.Component {
     }
 
 
+    /**
+     * This function changes the <div className> to allow a dynamic animation to show 
+     * the time left in the delay on the specific node.
+     */
     loadingDiv(){
         console.log("Loading Div called.");
-        this.setState ({ static: !this.state.static });
+        //this.animeTest();
+        //this.setState ({ static: !this.state.static });
+        //let tempNode = document.getElementsByClassName("static_node");
+        let tempDelay = this.props.delay*1000;
+        let tempNode = document.getElementsByClassName("loading_spinner");
+        let tempNodeId = document.getElementById(this.props.id);
+        
+        anime({
+            targets: tempNodeId,
+            rotate: '+=360deg',
+            easing: 'linear',
+            duration: tempDelay,
+            loop: false,
+        });
+        
     }
 
+    //This will delay the Node before it moves after being paused.
     delayDiv(){
         
         console.log("Delay Div called.");
-        this.setState ({ makeDelay: true});
-        this.incomingDelay=this.props.delay;
+        //this.setState ({ makeDelay: true});
+        //this.incomingDelay=this.props.delay;
+        
+        this.loadingDiv();
+        setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1000);
 
-        console.log("Hello");
-        setTimeout(() => {  this.resumeAnimation(); }, 2000);
+        
+        //this.animeTest();
+        //setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1000);
+        
 
+
+        //this.resumeAnimation();
+        //this.loadingDiv();
+    
+
+
+        //this.animeTest();
+        //setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1);
+
+        
     }
 
+    //This is a helper function that is called in a setTimeout() or js 'delay' function.
     resumeAnimation(){
         let pauseState = this.state.pause;
         pauseState = false;
         this.setState ({ pause: pauseState});
+        //this.animeTest();
+        //this.loadingDiv();
+
+    }
+
+
+    animeOpacity(){
+
+    }
+
+    //Testing animejs
+    animeTest(){
+        console.log("In animeTest");
+        //let testNode2 = document.getElementById("nodey")
+        let testNode2 = document.getElementsByClassName("static_node");
+        let currentDelay = this.props.delay*1000;
+     
+        anime({
+            targets: testNode2,
+            
+              scaleX: [
+                { value: .2, duration: 100, delay: currentDelay, easing: 'easeOutExpo' },
+                { value: 1, duration: 900 },
+                
+              ],
+            //   rotate: {
+            //     value: 360,
+            //     duration: currentDelay,
+            //     easing: 'easeInOutSine'
+            //   },
+             
+              easing: 'easeOutElastic(1, .8)',
+              loop: false
+          });
 
     }
 
@@ -92,9 +163,10 @@ export class BoxDelay extends React.Component {
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
 
                 >
-                    <div className={this.props.className} onClick={this.togglePause}>
-                        <div className={node_class}></div>
+                    <div className={node_class} id="nodey" onClick={this.togglePause}>
+                        <div className={"loading_spinner"} id={this.props.id}></div>
                     </div>
+                    
 
                 </AnimateKeyframes>
 

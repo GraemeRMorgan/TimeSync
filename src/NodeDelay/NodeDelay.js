@@ -39,11 +39,9 @@ class NodeDelay extends React.Component {
           <h1>Time Synchronization with Delay</h1>
           <MasterNode />
           <hr className="coolLine"></hr>
-          <BoxDelay className="box_1" delay={.3}/>
-          <BoxDelay className="box_2" delay={.5}/>
-          <BoxDelay className="box_3" delay={.7}/>
-          <Sensor />
-          <Box turnOnPause={true}/>
+          <BoxDelay className="box_1" id="box_1" delay={.3} />
+          <BoxDelay className="box_2" id="box_2" delay={.5}/>
+          <BoxDelay className="box_3" id="box_3" delay={.7}/>
         </header>
       </div>
     )

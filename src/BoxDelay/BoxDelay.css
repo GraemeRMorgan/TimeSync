@@ -1,3 +1,28 @@
+.animated_node{
+  width: 130px;
+  height: 50px;
+  background-color: #22D970;
+  color: #282c34;
+  position: relative;
+  left: -300px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  border-radius: 25px;
+}
+
+.static_node{
+  width: 130px;
+  height: 50px;
+  background-color: #922FFB;
+  color: #282c34;
+  position: relative;
+  left: -300px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  border-radius: 25px;
+}
 
 .box_1 {
     width: 130px;
@@ -6,43 +31,6 @@
     color: #282c34;
     position: relative;
     left:-300px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    border-radius: 25px;
-  }
-  .temp_box {
-    width: 130px;
-    height: 50px;
-    background-color: rgb(251, 47, 159);
-    color: #282c34;
-    position: relative;
-    left: -300px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    border-radius: 25px;
-  }
-  .animated_node{
-    width: 130px;
-    height: 50px;
-    background-color: rgb(47, 251, 105);
-    color: #282c34;
-    position: relative;
-    left: -300px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    border-radius: 25px;
-  }
-
-  .static_node{
-    width: 130px;
-    height: 50px;
-    background-color: rgb(255, 47, 170);
-    color: #282c34;
-    position: relative;
-    left: -300px;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
@@ -87,6 +75,82 @@
     border-radius: 25px;
   }
 
+  .loading_spinner {
+    width: 26px;
+    height: 26px;
+    border: 10px solid #922FFB;
+    border-top-color: #1A212B;
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 45px;
+    top: .5px;
+    margin-top: 20px;
+    vertical-align: middle;
+  }
+
+  .spin_box {
+    width: 130px;
+    height: 50px;
+    background-color: #922FFB;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 25px;
+  }
+
+  #box_1{
+    width: 26px;
+    height: 26px;
+    border: 10px solid #922FFB;
+    border-top-color: #1A212B;
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 45px;
+    top: .5px;
+    margin-top: 20px;
+    vertical-align: middle;
+  }
+
+  #box_2{
+    width: 26px;
+    height: 26px;
+    border: 10px solid #922FFB;
+    border-top-color: #1A212B;
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 45px;
+    top: .5px;
+    margin-top: 20px;
+    vertical-align: middle;
+  }
+
+  #box_3{
+    width: 26px;
+    height: 26px;
+    border: 10px solid #922FFB;
+    border-top-color: #1A212B;
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 45px;
+    top: .5px;
+    margin-top: 20px;
+    vertical-align: middle;
+  }
+
+  
+
+  
 
 
   
