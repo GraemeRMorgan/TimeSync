@@ -51,15 +51,30 @@ export class BoxDelay extends React.Component {
         //this.setState ({ static: !this.state.static });
         //let tempNode = document.getElementsByClassName("static_node");
         let tempDelay = this.props.delay*1000;
-        let tempNode = document.getElementsByClassName("loading_spinner");
+        //let tempNode = document.getElementsByClassName("loading_spinner");
+        let tempNode = document.getElementsByClassName("loader blur");
         let tempNodeId = document.getElementById(this.props.id);
         
-        anime({
-            targets: tempNodeId,
-            rotate: '+=360deg',
-            easing: 'linear',
+        //Keep in mind that this is working just fine. 
+        // anime({
+        //     targets: tempNodeId,
+        //     rotate: '+=360deg',
+        //     easing: 'linear',
+        //     duration: tempDelay,
+        //     loop: false,
+        // });
+
+        anime ({
+            targets: tempNode,
+            keyframes: [
+                {scale: 1},
+                {scale: 3},
+                {scale: 1}
+              ],
             duration: tempDelay,
             loop: false,
+            elasticity: 600,
+            easing: 'easeInQuad',
         });
         
     }
@@ -164,7 +179,11 @@ export class BoxDelay extends React.Component {
 
                 >
                     <div className={node_class} id="nodey" onClick={this.togglePause}>
-                        <div className={"loading_spinner"} id={this.props.id}></div>
+                        <div className='center'>
+                        <div className='loader blur'>
+                        <div className="circle circle-1" id="circle circle-1"></div>
+                        </div>
+                        </div>
                     </div>
                     
 
@@ -176,3 +195,6 @@ export class BoxDelay extends React.Component {
     }
 
 }
+
+
+//<div className={"loading_spinner"} id={this.props.id}></div>
