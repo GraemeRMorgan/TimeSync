@@ -13,7 +13,7 @@ export class Box extends React.Component {
     }
 
     togglePause() {
-        const pauseState = this.state.pause == true ? false : true;
+        const pauseState = this.state.pause === true ? false : true;
         this.setState({ pause: pauseState });
         console.log("Set Node Pause State in <Box />.");
     }

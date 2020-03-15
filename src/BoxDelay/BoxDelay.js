@@ -1,173 +1,92 @@
 import React from 'react';
 import './BoxDelay.css';
 import { AnimateKeyframes } from 'react-simple-animate';
-import { Sensor } from '../Sensor/Sensor';
 import anime from 'animejs';
 
 export class BoxDelay extends React.Component {
 
+    /**
+     * The main constructor for this Component. Functions must be bound in the constructor. 
+     * 
+     * Pause is defaulted to false so that the nodes will move.
+     * incomingDelay is simply here to make the code more readable. It could have also been
+     * called using 'this.props.delay' as the delay is sent in the div from the NodeDelay 
+     * component.
+     */
     constructor(props) {
         super(props);
-        this.state = { pause: false, static: true};
+        this.state = { pause: false};
         this.incomingDelay = this.props.delay;
+
+        //These are the functions within this component.
         this.togglePause = this.togglePause.bind(this);
         this.loadingDiv = this.loadingDiv.bind(this);
-        this.delayDiv = this.delayDiv.bind(this);
         this.resumeAnimation = this.resumeAnimation.bind(this);
-        this.animeTest = this.animeTest.bind(this);
     }
 
 
     /**
-     * I left off on this section. I am trying to get a delay working and also want to have 
-     * and editable <div> where I can animate the css of the component. 
+     * This function is the primary Event Handler for the onClick event called in the outer
+     * div in the render function at the bottom of this file. This is a simple function that
+     * sets the pause state. If the state is TRUE, then is calls loadingDiv() and runs the 
+     * delay for the animation.
      */
     togglePause() {
-
-        let pauseState = this.state.pause;
-
-        if(pauseState === false){
-            pauseState = true;  
-            //this.loadingDiv();  
-            //this.delayDiv(); 
+        if(this.state.pause === false){
+            this.setState({ pause: true}); 
         }else{
-            //pauseState = false;
-            this.delayDiv();
-            //this.loadingDiv();
+            this.loadingDiv();
+            setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1000);
         }
-
-        this.setState({ pause: pauseState });
-        console.log("Box Element Pause in <BoxDelay/>");
     }
 
+    /**
+     * setTimeout() expects a function and resumeAnimation() simply sets the pause state after
+     * the delay. 
+     */
+    resumeAnimation(){
+        this.setState ({ pause: false});
+    }
 
     /**
      * This function changes the <div className> to allow a dynamic animation to show 
      * the time left in the delay on the specific node.
      */
     loadingDiv(){
-        console.log("Loading Div called.");
-        //this.animeTest();
-        //this.setState ({ static: !this.state.static });
-        //let tempNode = document.getElementsByClassName("static_node");
         let tempDelay = this.props.delay*1000;
-        //let tempNode = document.getElementsByClassName("loading_spinner");
-        let tempNode = document.getElementsByClassName("loader blur");
         let tempNodeId = document.getElementById(this.props.id);
         
-        //Keep in mind that this is working just fine. 
-        // anime({
-        //     targets: tempNodeId,
-        //     rotate: '+=360deg',
-        //     easing: 'linear',
-        //     duration: tempDelay,
-        //     loop: false,
-        // });
-
-        anime ({
-            targets: tempNode,
-            keyframes: [
-                {scale: 1},
-                {scale: 3},
-                {scale: 1}
-              ],
+        /**
+         * The anime.js library is used for the animation on the spinner. More documentation for 
+         * this library can be found at https://github.com/juliangarnier/anime/
+         */ 
+        anime({
+            targets: tempNodeId,
+            rotate: '+=360deg',
+            easing: 'linear',
             duration: tempDelay,
             loop: false,
-            elasticity: 600,
-            easing: 'easeInQuad',
         });
-        
     }
-
-    //This will delay the Node before it moves after being paused.
-    delayDiv(){
-        
-        console.log("Delay Div called.");
-        //this.setState ({ makeDelay: true});
-        //this.incomingDelay=this.props.delay;
-        
-        this.loadingDiv();
-        setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1000);
-
-        
-        //this.animeTest();
-        //setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1000);
-        
-
-
-        //this.resumeAnimation();
-        //this.loadingDiv();
-    
-
-
-        //this.animeTest();
-        //setTimeout(() => {  this.resumeAnimation(); }, this.props.delay*1);
-
-        
-    }
-
-    //This is a helper function that is called in a setTimeout() or js 'delay' function.
-    resumeAnimation(){
-        let pauseState = this.state.pause;
-        pauseState = false;
-        this.setState ({ pause: pauseState});
-        //this.animeTest();
-        //this.loadingDiv();
-
-    }
-
-
-    animeOpacity(){
-
-    }
-
-    //Testing animejs
-    animeTest(){
-        console.log("In animeTest");
-        //let testNode2 = document.getElementById("nodey")
-        let testNode2 = document.getElementsByClassName("static_node");
-        let currentDelay = this.props.delay*1000;
-     
-        anime({
-            targets: testNode2,
-            
-              scaleX: [
-                { value: .2, duration: 100, delay: currentDelay, easing: 'easeOutExpo' },
-                { value: 1, duration: 900 },
-                
-              ],
-            //   rotate: {
-            //     value: 360,
-            //     duration: currentDelay,
-            //     easing: 'easeInOutSine'
-            //   },
-             
-              easing: 'easeOutElastic(1, .8)',
-              loop: false
-          });
-
-    }
-
-
-
 
 
     /**
-     * This method should monitor the position of the div and send this info
-     * via props to <Sensor />. In that class we can monitor all of the collisions
-     * to see if 
+     * This render function controls the animation for the Nodes using the <AnimatedKeyframes/> 
+     * external component. This animates the nodes 600px from -300px to +300px, which is set in
+     * the CSS for the outer div. 
+     * 
+     * In the jsx, the outer div is the animated node and the inner div is the spinner wheel. 
+     * 
+     * The main feature of this render function is the onClick handler in the outer div. This calls
+     * the togglePause() function which drives the delay and spinner wheel.
      */
     render() {
-        let node_class = this.state.static ? "static_node" : "animated_node";
-
         return (
             <div>
                 <AnimateKeyframes
                     play 
                     pause={this.state.pause}
-                    //pause={this.togglePause}
                     delay={this.incomingDelay}
-                    //delay={this.state.delay}
                     duration={3}
                     keyframes={[
                         'transform: translateX(0px)',
@@ -176,20 +95,11 @@ export class BoxDelay extends React.Component {
                     ]}
                     iterationCount="infinite"
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
-
                 >
-                    <div className={node_class} id="nodey" onClick={this.togglePause}>
-                        <div className='center'>
-                        <div className='loader blur'>
-                        <div className="circle circle-1" id="circle circle-1"></div>
-                        </div>
-                        </div>
+                    <div className={this.props.className} onClick={this.togglePause}>
+                        <div id={this.props.id}></div>
                     </div>
-                    
-
                 </AnimateKeyframes>
-
-                <Sensor />
             </div>
         )
     }
@@ -197,4 +107,4 @@ export class BoxDelay extends React.Component {
 }
 
 
-//<div className={"loading_spinner"} id={this.props.id}></div>
+
