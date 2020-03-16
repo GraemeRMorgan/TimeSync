@@ -2,6 +2,7 @@ import React from 'react';
 import './NodeDelay.css';
 import { MasterNode } from '../MasterNode/MasterNode';
 import { BoxDelay } from '../BoxDelay/BoxDelay';
+import { Spinner } from '../Spinner/Spinner';
 
 
 /**
@@ -16,6 +17,7 @@ class NodeDelay extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          {/*<Spinner />*/}
           <h1>Time Synchronization with Delay</h1>
           <MasterNode />
           <hr className="coolLine"></hr>
@@ -23,6 +25,7 @@ class NodeDelay extends React.Component {
           <BoxDelay className="static_node" id="spinner_2" delay={.5}/>
           <BoxDelay className="static_node" id="spinner_3" delay={.7}/>
         </header>
+        {/*<Spinner/>*/}
       </div>
     )
   }

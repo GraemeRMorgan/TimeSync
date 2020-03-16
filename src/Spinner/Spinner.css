@@ -1,6 +1,80 @@
+body {
+    margin: 20px;
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+
+.boxy {
+    pointer-events: none;
+    background-color: #40F78F;
+    margin: 4px;
+    display: inline-block;
+    top: -10px;
+    left: -10px;
+    opacity: 0.6;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  }
+
 .cls-1 {
-    fill: rgba(199, 27, 27, 0);
-    stroke: #b61f44;
+    width:50px;
+    height: 50px;
+    margin: 400px;
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #922FFB;
     stroke-miterlimit: 10;
     stroke-width: 5px;
+}
+
+.drawShape{
+    width: 500px;
+    height:500px;
+    margin: 100px;
+}
+
+
+.cls-1 {
+    width:50px;
+    height: 50px;
+    margin: 100px;
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #922FFB;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+}
+/*
+#networkGraph{
+    position: relative;
+}*/
+
+#networkGraph{
+    width: 1100px;
+    height:400px;
+    margin-top: 500px;
+    margin-bottom: 150px;
+    margin-right:200px;
+}
+
+
+.cls-2 {
+    width:40px;
+    height: 50px;
+    margin: 90px;
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #1A212B;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+}
+
+.cls-3 {
+    width:50px;
+    height: 50px;
+    margin: 50px;
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #922FFB;
+    stroke-miterlimit: 5;
+    stroke-width: 4px;
 }
