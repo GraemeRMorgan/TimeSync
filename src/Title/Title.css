@@ -1,9 +1,10 @@
+/*
 body {
     margin: 20px;
     font-family: 'Lato';
     font-weight: 300;
     font-size: 1.2em;
-  }
+  }*/
 
 .boxy {
     pointer-events: none;
@@ -64,7 +65,7 @@ body {
     height: 50px;
     margin: 90px;
     fill: rgba(0, 0, 0, 0.0);
-    stroke: #1A212B;
+    stroke: #40F78F;
     stroke-miterlimit: 10;
     stroke-width: 1px;
 }

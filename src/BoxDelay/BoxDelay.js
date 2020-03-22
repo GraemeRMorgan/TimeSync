@@ -2,6 +2,12 @@ import React from 'react';
 import './BoxDelay.css';
 import { AnimateKeyframes } from 'react-simple-animate';
 import anime from 'animejs';
+/**
+ * The purpose of this Component is to generate interactive Nodes that can be clicked and 
+ * paused by the user. These nodes are used in the NodeDelay Component and contain a visual
+ * meter that corresponds to the delay that the node will take to receive a command from the
+ * user.
+ */
 
 export class BoxDelay extends React.Component {
 

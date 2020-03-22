@@ -1,39 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
-import { ChildNodes } from '../ChildNodes/ChildNodes';
-import { MasterNode } from '../MasterNode/MasterNode';
-import { Sensor } from '../Sensor/Sensor'
-import { Box } from '../Box/Box';
+import Title from '../Title/Title';
+import GraphDraw from '../GraphDraw/GraphDraw';
+import NodeGame from '../NodeGame/NodeGame';
+import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
 
 
+/**
+ * This is the 'Driver' componenet for the rest of the app. 
+ * This structure is exported to the index.js file and is then
+ * rendered in the browser. 
+ * 
+ * This component contains all of the primary components in the 
+ * application. 
+ */
 
-class App extends React.Component {
+  class App extends React.Component{
 
-  getLocation(node){
-    let x = node.offsetLeft;
-    console.log(x);
+    render() {
+      return (
+        <div >
+          <Title />
+          <GraphDraw />
+          <NodeGame />
+          <NodeGameDelay />  
+        </div>
+      )
+    }
   }
-  
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Time Synchronization</h1>
-          <MasterNode />
-          <hr className="coolLine"></hr>
-          <ChildNodes className="box_1" delay={.3} />
-          <ChildNodes className="box_2" delay={.5}/>
-          <ChildNodes className="box_3" delay={.7}/>
-          <Sensor />
-          <Box turnOnPause={true}/>
-        </header>
-      </div>
-    )
-  }
-}
-
-
-
 
 export default App;

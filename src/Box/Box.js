@@ -3,13 +3,16 @@ import './Box.css';
 import { AnimateKeyframes } from 'react-simple-animate';
 import { Sensor } from '../Sensor/Sensor';
 
+/**
+ * The purpose of this Component is to generate interactive Nodes that can be clicked and 
+ * paused by the user. These nodes are used in the NodeGame Component. 
+ */
 export class Box extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = { pause: false };
         this.togglePause = this.togglePause.bind(this);
-        this.turnOnPause = this.turnOnPause.bind(this);
     }
 
     togglePause() {
@@ -17,13 +20,6 @@ export class Box extends React.Component {
         this.setState({ pause: pauseState });
         console.log("Set Node Pause State in <Box />.");
     }
-
-    //Trying to see if I can get a global pause to work.
-    turnOnPause(){
-        this.setState({pause:true});
-    }
-
-    //state = { pause: false };
 
     /**
      * This method should monitor the position of the div and send this info
@@ -36,7 +32,6 @@ export class Box extends React.Component {
                 <AnimateKeyframes
                     play
                     pause={this.state.pause}
-                    //pause={this.togglePause}
                     delay={this.props.delay}
                     duration={3}
                     keyframes={[
@@ -46,15 +41,11 @@ export class Box extends React.Component {
                     ]}
                     iterationCount="infinite"
                     easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
-
                 >
                     <div className={this.props.className} onClick={this.togglePause} ></div>
-
                 </AnimateKeyframes>
-                
                 <Sensor />
             </div>
         )
     }
-
 }

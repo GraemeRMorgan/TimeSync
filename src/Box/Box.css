@@ -50,6 +50,19 @@
     border-radius: 25px;
   }
 
-
+  .master_box {
+    width: 170px;
+    height: 100px;
+    background-color: #22D970;
+    outline-color: aqua;
+    outline-width: 2px;
+    color: #282c34;
+    position: relative;
+    left: -300px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    border-radius: 10px;
+  }
 
   
