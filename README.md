@@ -1,5 +1,5 @@
 
-![](https://github.com/GraemeRMorgan/TimeSync/blob/master/other/timesyncGif.gif)
+
 ##  TimeSync 
 ###### Warning: I believe this application may cause dizziness or headaches. Beware.
 
