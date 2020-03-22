@@ -45,7 +45,7 @@ export class GraphDraw extends React.Component {
     }
 
     /**
-     * This function ensures the two function are loaded when the Component is called.
+     * This ensures that all functions are loaded when the component is called.
      */
     componentDidMount() {
         this.animation();

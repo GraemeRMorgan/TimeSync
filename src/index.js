@@ -6,11 +6,12 @@ import Title from './Title/Title';
 import GraphDraw from './GraphDraw/GraphDraw';
 import NodeGame from './NodeGame/NodeGame';
 import NodeGameDelay from './NodeGameDelay/NodeGameDelay';
+import Simulation from './Simulation/Simulation';
 
 /**
  * This is the entry point for the web application. The component that is passed 
  * through the ReactDOM.render function is what will be displayed in the browser.
  */
-ReactDOM.render(<Title/>, document.getElementById('root'));
+ReactDOM.render(<Simulation/>, document.getElementById('root'));
 
 
