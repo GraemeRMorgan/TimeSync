@@ -47,6 +47,9 @@ export class Simulation extends React.Component {
         
     }
 
+    getTime(){
+    }
+
     
 
 
@@ -62,17 +65,6 @@ export class Simulation extends React.Component {
         });
     }
 
-
-    /**
-     * Get the location of the Time Server Node. 
-     * 
-     * < This is a work in progress >
-     */
-    getLocation(){
-        let server_location = document.getElementsByClassName('time_server');
-        console.log('Position of Time Server: ' + server_location);
-    }
-
     /**
      * Mount the enclosed functions when this componenet is called.
      */
@@ -80,16 +72,19 @@ export class Simulation extends React.Component {
         this.timeServerAnimation();
         this.closeNodeAnimation();
         this.toggleAnimation();
+        this.getTime();
     }
 
 
 
     render() {
+
         return (
             <div className='sim_control'>
-                <div className='time_server' onClick={this.toggleAnimation}></div>
+                <div className='time_server'></div>
                 <hr className="coolLine"></hr>
                 <div className='node' id='closeNode' delay='.3'></div>
+                <div className='time'>{this.getTime}</div>
             </div>
         );
     }
