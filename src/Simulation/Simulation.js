@@ -1,90 +1,74 @@
 import React from 'react';
 import './Simulation.css';
-import { Box } from '../Box/Box';
 import anime from 'animejs';
 
 /**
- * This component will drive the Primary Simulation Component of this
- * project which aims to illustrate Christian's Algorithm for time 
- * synchronization. All elements will be contained in this file, as 
- * this will allow location information to be tracked. 
+ * This component will include a TIMESERVER that includes
+ * the current time and a node that wishes to receive the current time.
+ * 
+ * onClick of the node, it wil delay, then display the time. During this
+ * time, the timeServer time will increase.  
  */
 
 export class Simulation extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { play: true};
-        this.timeServerController = this.timeServerAnimation();
-
-        //Bind functions
-        this.timeServerAnimation = this.timeServerAnimation.bind(this);
-        this.toggleAnimation = this.toggleAnimation.bind(this);
+        this.state = {timeServerTime : 12};
+        
+        this.increaseTime = this.increaseTime.bind(this);
+        this.commAnimation = this.commAnimation.bind(this);
     }
 
     /**
-     * This function is responsible for the primary looping animation
-     * of the Nodes.
+     * This is our base for working. When we click on the node, we can include a delay 
+     * that will control some simply animation from the ts to the node. During this time
+     * the time on the ts will increase, but the old time will display on the node. Not good. 
      */
-    timeServerAnimation() {
-        let timeServer = anime({
-            targets: '.time_server',
-            translateX: 600,
-            direction: 'alternate',
-            loop: true,
-            easing: 'easeInOutSine',
-            duration: 2000,
-            autoplay: true
-        });
-
-        return timeServer;
-    }
-
-
-    // Toggle animation of the node.
-    toggleAnimation() {
-        this.timeServerController.pause();
+    increaseTime(){
+        this.commAnimation();
+        let currentTime = this.state.timeServerTime;
+        currentTime += 2;
+        this.setState({timeServerTime: currentTime});
         
+
     }
 
-    getTime(){
+    /**
+     * Animation to control the communication signal.
+     */
+    commAnimation(){
+        let commAnime = anime({
+            targets: '.commSignal',
+            left: '240px',
+            loop: 1,
+            backgroundColor: '#22D970',
+            borderRadius: ['0%', '50%'],
+            easing: 'easeInOutQuad'
+          });
     }
 
-    
-
-
-    // Node 1 Animation
-    closeNodeAnimation() {
-        anime({
-            targets: '#closeNode',
-            translateX: 600,
-            direction: 'alternate',
-            loop: true,
-            easing: 'easeInOutSine',
-            duration: 2200
-        });
-    }
 
     /**
      * Mount the enclosed functions when this componenet is called.
      */
-    componentDidMount(){
-        this.timeServerAnimation();
-        this.closeNodeAnimation();
-        this.toggleAnimation();
-        this.getTime();
+    componentDidMount() {
+        //this.increaseTime();
+        //this.commAnimation();
     }
 
 
 
     render() {
-
         return (
             <div className='sim_control'>
-                <div className='time_server'></div>
-                <hr className="coolLine"></hr>
-                <div className='node' id='closeNode' delay='.3'></div>
-                <div className='time'>{this.getTime}</div>
+                <div className='time_server'>
+                    <h1>{this.state.timeServerTime}</h1>
+                 </div>
+                <div className='commSignal'></div>
+                <div className='node' onClick={this.increaseTime}>
+                    <h1>{this.state.timeServerTime-2}</h1>
+                </div>
             </div>
         );
     }

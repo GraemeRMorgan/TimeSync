@@ -5,11 +5,10 @@
 .time_server {
     width: 170px;
     height: 100px;
+    right: 200px;
     background-color: #22D970;
-    outline-color: aqua;
-    outline-width: 2px;
     color: #282c34;
-    position: relative;
+    position: absolute;
     justify-content: center;
     align-items: center;
     margin-bottom: 0px;
@@ -17,14 +16,28 @@
   }
 
   .node{
-    width: 130px;
-    height: 50px;
+    width: 170px;
+    height: 100px;
+    left: 100px;
     background-color: #922FFB;
-    color: #922FFB;
-    position: relative;
+    color: #282c34;
+    position: absolute;
     justify-content: center;
     align-items: center;
     margin-bottom: 0px;
+    border-radius: 10px;
+  }
+
+  .commSignal{
+    width: 20px;
+    height: 20px;
+    background-color: #22D970;
+    position: absolute;
+    left: -250px;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
     border-radius: 25px;
   }
 
