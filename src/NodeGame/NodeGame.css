@@ -51,6 +51,21 @@
     }
   }
   */
+
+
+  
+
+
+  .h1 {
+    font-size: calc(50px + 2vmin);
+    color: #40F78F;
+  }
+
+  .p {
+    font-size: calc(8px + 2vmin);
+    color: #40F78F;
+  }
+
   hr.coolLine{
     border-top: 1px solid #572DFB;
     width: 720px;

@@ -19,11 +19,30 @@ import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
 
     render() {
       return (
-        <div >
-          <Title />
-          <GraphDraw />
-          <NodeGame />
-          <NodeGameDelay />  
+        <div>
+          <div className='flex-container wrap title'>
+            <Title />
+          </div>
+          
+    
+
+
+          
+          <div className='flex-container wrap game_1'>
+            <NodeGame />
+          </div>
+        
+          
+          <div className='flex-container wrap graph'>
+            <GraphDraw />
+          </div>
+          
+          
+          
+          <div className='flex-container wrap game_1'>
+            <NodeGameDelay />  
+          </div>
+      
         </div>
       )
     }

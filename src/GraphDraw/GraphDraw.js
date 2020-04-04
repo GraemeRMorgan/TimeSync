@@ -76,7 +76,7 @@ export class GraphDraw extends React.Component {
                         <circle id="node5" class="nodeDraw" cx="474.57" cy="59.56" r="6.28" />
                         
                     </svg>
-                    <div className='boxy' onClick={this.followPathAnimation}></div>
+                    {/*<div className='boxy' onClick={this.followPathAnimation}></div>*/}
 
                 </div>
 

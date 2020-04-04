@@ -37,15 +37,18 @@ class NodeGame extends React.Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <h1>Time Synchronization</h1>
+            <div>
+                <div>
+                    <h1 className='flex-container wrap h1'>Time Synchronization</h1>
+                    <h1 className='flex-container wrap p'>Click on the nodes to pause and play.</h1>
+                </div>   
+                <div>
                     <Box className="master_box" />
                     <hr className="coolLine"></hr>
                     <Box className="box_1" delay={.3} />
                     <Box className="box_2" delay={.5} />
                     <Box className="box_3" delay={.7} />
-                </header>
+                    </div> 
             </div>
         )
     }

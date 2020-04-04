@@ -45,7 +45,7 @@ class Title extends React.Component {
     render() {
         return (
             <div>
-                <div className='drawShape' onClick={this.animation}>
+                <div onClick={this.animation}>
                     <svg id="lines" viewBox="0 0 412.74 65.53">
                         <line class="cls-1" y1="2" x2="46.06" y2="2" />
                         <line class="cls-1" x1="22.84" y1="2.58" x2="22.84" y2="64.13" />

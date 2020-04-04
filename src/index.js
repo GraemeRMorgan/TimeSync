@@ -12,6 +12,6 @@ import Simulation from './Simulation/Simulation';
  * This is the entry point for the web application. The component that is passed 
  * through the ReactDOM.render function is what will be displayed in the browser.
  */
-ReactDOM.render(<Simulation/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 

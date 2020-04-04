@@ -4,6 +4,90 @@
 }
 
 
+.flex-container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0;
+  list-style: none;
+  border: 1px solid silver;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.wrap    { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+}  
+
+.title {
+  padding-left: 10em;
+  padding-right: 10em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 15em;
+  margin-right: 15em;
+  
+}
+
+.graph {
+  padding: 100px;
+  margin-left: 50px;
+  margin-right:50px;
+}
+
+.game_1 {
+  padding: 100px;
+  margin-left: 50px;
+  margin-right:50px;
+  overflow: hidden;
+}
+
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+  font-size: calc(10px + 2vmin);
+  color: #40F78F;
+}
+
+
+
+body {
+  background: #1A212B;
+}
+
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -19,8 +103,6 @@ header {
   font-size: calc(10px + 2vmin);
   color: #40F78F;
 }
-
-
 body {
   width: 100vw;
   height: 100vh;
@@ -32,8 +114,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
+*/
 
 
 hr.coolLine{

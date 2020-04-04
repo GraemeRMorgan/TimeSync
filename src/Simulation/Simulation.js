@@ -14,10 +14,12 @@ export class Simulation extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {timeServerTime : 12};
-        
+        this.state = { timeServerTime: 12 };
+
+
         this.increaseTime = this.increaseTime.bind(this);
         this.commAnimation = this.commAnimation.bind(this);
+        this.countUp = this.countUp.bind(this);
     }
 
     /**
@@ -25,19 +27,26 @@ export class Simulation extends React.Component {
      * that will control some simply animation from the ts to the node. During this time
      * the time on the ts will increase, but the old time will display on the node. Not good. 
      */
-    increaseTime(){
-        this.commAnimation();
+    
+    increaseTime() {
+        setTimeout(() => { this.countUp(); }, 1000);
+    }
+
+    countUp() {
         let currentTime = this.state.timeServerTime;
-        currentTime += 2;
-        this.setState({timeServerTime: currentTime});
-        
+        currentTime++;
+        this.setState({ timeServerTime: currentTime });
+        this.increaseTime();
+    }
+
+    countUpStop(){
 
     }
 
     /**
      * Animation to control the communication signal.
      */
-    commAnimation(){
+    commAnimation() {
         let commAnime = anime({
             targets: '.commSignal',
             left: '240px',
@@ -45,7 +54,7 @@ export class Simulation extends React.Component {
             backgroundColor: '#22D970',
             borderRadius: ['0%', '50%'],
             easing: 'easeInOutQuad'
-          });
+        });
     }
 
 
@@ -58,16 +67,15 @@ export class Simulation extends React.Component {
     }
 
 
-
     render() {
         return (
             <div className='sim_control'>
                 <div className='time_server'>
                     <h1>{this.state.timeServerTime}</h1>
-                 </div>
+                </div>
                 <div className='commSignal'></div>
                 <div className='node' onClick={this.increaseTime}>
-                    <h1>{this.state.timeServerTime-2}</h1>
+                    <h1>{this.state.timeServerTime - 2}</h1>
                 </div>
             </div>
         );
