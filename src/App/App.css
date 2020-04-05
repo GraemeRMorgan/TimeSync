@@ -44,10 +44,16 @@
 }
 
 .game_1 {
-  padding: 100px;
+  padding: 0px;
   margin-left: 50px;
   margin-right:50px;
   overflow: hidden;
+}
+
+.simulation {
+  padding: 0px;
+  margin-left: 50px;
+  margin-right:50px;
 }
 
 

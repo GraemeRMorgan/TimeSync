@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import GraphDraw from '../GraphDraw/GraphDraw';
 import NodeGame from '../NodeGame/NodeGame';
 import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
+import Simulation from '../Simulation/Simulation';
 
 
 /**
@@ -25,9 +26,12 @@ import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
           </div>
           
     
+          <div className='flex-container wrap simulation'>
+            <Simulation />
+          </div>
 
 
-          
+          {/*}
           <div className='flex-container wrap game_1'>
             <NodeGame />
           </div>
@@ -42,6 +46,8 @@ import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
           <div className='flex-container wrap game_1'>
             <NodeGameDelay />  
           </div>
+      */}
+          
       
         </div>
       )

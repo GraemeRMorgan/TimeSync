@@ -8,11 +8,11 @@
     right: 200px;
     background-color: #22D970;
     color: #282c34;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    padding: 10px;
+    margin-right: 200px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    overflow: hidden;
   }
 
   .node{
@@ -21,22 +21,17 @@
     left: 100px;
     background-color: #922FFB;
     color: #282c34;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    padding: 10px;
+    margin-left:200px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    overflow: hidden;
   }
 
   .commSignal{
     width: 20px;
     height: 20px;
     background-color: #22D970;
-    position: absolute;
-    left: -250px;
-    top: 40px;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 25px;
     border-radius: 25px;
   }
@@ -48,4 +43,49 @@
 
   .time{
       color: #fff;
+  }
+
+  .map_container{
+    
+    padding-left: 100px;
+    padding-right:100px;
+    margin: 100px;
+    overflow: hidden;
+  }
+
+  .map {
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #922FFB;
+    fill:#330C57;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+
+  .network_lines {
+    fill: rgba(0, 0, 0, 0.0);
+    stroke: #40F78F;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+  }
+
+  .map_node {
+    background-color: #40F78F;
+    fill: #40F78F;
+    stroke: #106334;
+    stroke-width: 4px;
+   
+  }
+
+  .signal {
+    pointer-events: none;
+    background-color: #40F78F;
+    margin: 0px;
+    display: inline-block;
+    top: -10px;
+    left: -10px;
+    opacity: 0.6;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
   }
