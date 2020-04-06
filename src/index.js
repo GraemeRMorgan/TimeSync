@@ -6,7 +6,7 @@ import Title from './Title/Title';
 import GraphDraw from './GraphDraw/GraphDraw';
 import NodeGame from './NodeGame/NodeGame';
 import NodeGameDelay from './NodeGameDelay/NodeGameDelay';
-import Simulation from './Simulation/Simulation';
+import NetworkMap from './NetworkMap/NetworkMap';
 
 /**
  * This is the entry point for the web application. The component that is passed 

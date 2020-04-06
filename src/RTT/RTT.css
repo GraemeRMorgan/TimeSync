@@ -1,0 +1,53 @@
+.temp_div {
+    width: 170px;
+    height: 100px;
+    background-color: #922FFB;
+    color: #282c34;
+    border-radius: 25px;
+    overflow:hidden;
+}
+
+.rtt_container {
+    padding-left: 100px;
+    padding-right:100px;
+    margin: 100px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 82%;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .node_text {
+      fill: #22D970;
+  }
+
+  .node_box {
+    stroke: #922FFB;
+    fill: #22D970;
+    stroke-width: 2px;
+  }
+
+  .single_network_line {
+    stroke: #922FFB;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+  }
+
+  #spinner_under {
+    stroke: #922FFB;
+    fill:none;
+    stroke-miterlimit: 10;
+    stroke-width: 20px;
+  }
+  #spinner_upper {
+    stroke: #1A212B;
+    fill:none;
+    stroke-miterlimit: 10;
+    stroke-width: 15px;
+  }
+

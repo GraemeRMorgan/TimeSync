@@ -1,0 +1,39 @@
+
+.tokenNet_container {
+    padding-left: 100px;
+    padding-right:100px;
+    margin: 200px;
+    overflow: hidden;
+}
+
+.node_circles {
+    stroke: #922FFB;
+    fill: #22D970;
+    stroke-width: 0px;
+  }
+
+
+  .lines_toUL {
+    stroke: #22D970;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+  }
+  .lines_toLL {
+    stroke: #22D970;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+  }
+  .lines_toUR {
+    stroke: #22D970;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+  }
+  .lines_toLR {
+    stroke: #22D970;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+  }

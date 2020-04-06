@@ -1,0 +1,14 @@
+
+.hourglass_color {
+    fill: #922FFB;
+}
+
+.sand {
+    fill: #22D970;
+}
+
+.hourglass_container {
+    padding: 100px;
+    margin-left: 200px;
+    margin-right:200px;
+}
