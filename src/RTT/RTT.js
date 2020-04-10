@@ -14,7 +14,8 @@ export class RTT extends React.Component {
         anime({
             targets: '.single_network_line',
             strokeDashoffset: [anime.setDashoffset, 0],
-            easing: 'cubicBezier(.5, .05, .1, .3)',
+            //easing: 'cubicBezier(.5, .05, .1, .3)',
+            easing: 'linear',
             duration: 1800,
             endDelay: 1000,
             delay:500,

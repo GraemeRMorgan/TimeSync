@@ -1,0 +1,12 @@
+#spinner_main_under {
+    stroke: #922FFB;
+    fill:none;
+    stroke-miterlimit: 10;
+    stroke-width: 20px;
+  }
+  #spinner_main_upper {
+    stroke: #1A212B;
+    fill:none;
+    stroke-miterlimit: 10;
+    stroke-width: 15px;
+  }

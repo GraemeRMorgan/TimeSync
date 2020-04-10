@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "animejs": "^3.1.0",
     "framer-motion": "^1.9.1",
+    "ping.js": "^0.2.3",
     "react": "^16.12.0",
     "react-anime": "^3.0.3",
     "react-delay": "^0.1.0",

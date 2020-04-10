@@ -50,9 +50,10 @@
 }
 
 .hourglass {
-  padding: 100px;
+  padding: 0px;
   margin-left: 300px;
   margin-right:300px;
+  overflow:hidden;
 }
 
 .game_1 {
@@ -70,7 +71,6 @@
 
 
 .flex-item {
-  background: tomato;
   padding: 5px;
   width: 100px;
   height: 100px;

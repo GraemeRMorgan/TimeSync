@@ -8,6 +8,7 @@ import NetworkMap from '../NetworkMap/NetworkMap';
 import RTT from '../RTT/RTT';
 import TokenNetwork from '../TokenNetwork/TokenNetwork';
 import Hourglass from '../Hourglass/Hourglass';
+import PingSim from '../PingSim/PingSim';
 
 /**
  * This is the 'Driver' componenet for the rest of the app. 
@@ -32,39 +33,42 @@ import Hourglass from '../Hourglass/Hourglass';
             <Title />
           </div>
 
-
-          
-          <div className='flex-container wrap token'>
-            <TokenNetwork />
+          <div className='flex-container wrap title'>
+            <PingSim />
           </div>
 
           
-          <div className='flex-container wrap rtt'>
-            <RTT />
-          </div>
-    
+
 
           
           <div className='flex-container wrap simulation'>
             <NetworkMap />
           </div>
 
-         
           <div className='flex-container wrap game_1'>
             <NodeGame />
           </div>
-        
+
           
-          <div className='flex-container wrap graph'>
-            <GraphDraw />
+          <div className='flex-container wrap rtt'>
+            <RTT />
           </div>
-          
-          
-          
+
+
           <div className='flex-container wrap game_1'>
             <NodeGameDelay />  
           </div>
+
+
+          <div className='flex-container wrap token'>
+            <TokenNetwork />
+          </div>
+
+
            {/*}
+           <div className='flex-container wrap graph'>
+            <GraphDraw />
+          </div>
           */}
           
       
