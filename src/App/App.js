@@ -9,6 +9,7 @@ import RTT from '../RTT/RTT';
 import TokenNetwork from '../TokenNetwork/TokenNetwork';
 import Hourglass from '../Hourglass/Hourglass';
 import PingSim from '../PingSim/PingSim';
+import PingSame from '../PingSame/PingSame'
 
 /**
  * This is the 'Driver' componenet for the rest of the app. 
@@ -33,7 +34,11 @@ import PingSim from '../PingSim/PingSim';
             <Title />
           </div>
 
-          <div className='flex-container wrap title'>
+          <div className='flex-container wrap ping_same'>
+            <PingSame />
+          </div>
+
+          <div className='flex-container wrap ping_sim'>
             <PingSim />
           </div>
 
