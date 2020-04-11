@@ -6,6 +6,7 @@
     color: #282c34;
     margin-bottom: 25px;
     border-radius: 25px;
+    cursor:pointer;
   }
 
   .box_2 {
@@ -15,6 +16,7 @@
     color: #282c34;
     margin-bottom: 25px;
     border-radius: 25px;
+    cursor:pointer;
   }
 
   .box_3 {
@@ -24,6 +26,7 @@
     color: #282c34;
     margin-bottom: 25px;
     border-radius: 25px;
+    cursor:pointer;
   }
   .box_4 {
     width: 130px;
@@ -32,6 +35,17 @@
     color: #282c34;
     margin-bottom: 25px;
     border-radius: 25px;
+    cursor:pointer;
+  }
+
+  .box_1:hover {
+    background-color: #7125C2;
+  }
+  .box_2:hover {
+    background-color: #7125C2;
+  }
+  .box_3:hover {
+    background-color: #7125C2;
   }
 
   .master_box {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './RTT.css';
 import anime from 'animejs';
+import Switch from '../Switch/Switch';
 import { Animate, AnimateGroup } from 'react-simple-animate';
 
 export class RTT extends React.Component {
@@ -8,6 +9,8 @@ export class RTT extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.runAnimation = this.runAnimation.bind(this);
     }
 
     drawLine() {
@@ -18,18 +21,18 @@ export class RTT extends React.Component {
             easing: 'linear',
             duration: 1800,
             endDelay: 1000,
-            delay:500,
+            delay: 500,
             loop: true,
             direction: 'alternate',
 
         });
     }
 
-    rttSpinFade(){
+    rttSpinFade() {
         anime({
             targets: '#spinner_upper',
             easing: 'linear',
-            delay:6100,
+            delay: 6100,
             duration: 500,
             opacity: 0,
             loop: true,
@@ -38,25 +41,51 @@ export class RTT extends React.Component {
 
 
     rttSpinStart() {
-          anime({
+        anime({
             targets: '#spinner_upper',
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'linear',
             duration: 5600,
-            delay:500,
-            endDelay:500,
+            delay: 500,
+            endDelay: 500,
             loop: true,
         });
     }
 
-   
 
-    
+    rttSetupCircle() {
+        anime({
+            targets: '#spinner_upper',
+            strokeDashoffset: [anime.setDashoffset, 317.5],
+            easing: 'linear',
+            duration: 0,
+            loop: false,
+            autoplay: true
+        });
+    }
 
-    componentDidMount() {
+    rttSetupLine() {
+        anime({
+            targets: '.single_network_line',
+            strokeDashoffset: [anime.setDashoffset, 630],
+            easing: 'linear',
+            duration: 0,
+            loop: false,
+            autoplay: true
+        });
+    }
+
+
+    runAnimation() {
         this.drawLine();
         this.rttSpinStart();
         this.rttSpinFade();
+    }
+
+
+    componentDidMount() {
+        this.rttSetupLine();
+        this.rttSetupCircle();
     }
 
     render() {
@@ -64,7 +93,6 @@ export class RTT extends React.Component {
         return (
             <div className='flex-container wrap'>
                 <div className='rtt_container'>
-
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668.56 225.1">
 
                         <g id="Layer_2" data-name="Layer 2">
@@ -133,6 +161,13 @@ export class RTT extends React.Component {
                             <polyline className="single_network_line" points="91.1 152.6 91.1 224.6 577.1 224.6 577.1 152.6" />
                         </g>
                     </svg>
+                    <button className="button button_run_rtt" onClick={this.runAnimation}>RTT Simulation</button>
+                    <div>
+                        <Switch
+                            isOn={value}
+                            handleToggle={() => setValue(!value)}
+                        />
+                    </div>
 
 
 

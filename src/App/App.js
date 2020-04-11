@@ -58,10 +58,10 @@ import Switch from '../Switch/Switch';
 
           
           <div className="flex-container wrap title">
-            <Switch 
+            {/*<Switch 
                 isOn={value} 
                 handleToggle={() => setValue(!value)}
-            />
+            />*/}
           </div>
 
           <div className='flex-container wrap ping_same'>
