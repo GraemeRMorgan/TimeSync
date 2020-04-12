@@ -71,3 +71,8 @@
     border: 3px solid #9262FB;
     cursor: pointer;
   }
+
+  .rtt_toggle {
+    margin: 10px;
+    padding: 10px;
+  }
