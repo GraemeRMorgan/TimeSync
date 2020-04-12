@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/App';
-import Title from './Title/Title';
-import GraphDraw from './GraphDraw/GraphDraw';
-import NodeGame from './NodeGame/NodeGame';
-import NodeGameDelay from './NodeGameDelay/NodeGameDelay';
-import NetworkMap from './NetworkMap/NetworkMap';
+
 
 /**
  * This is the entry point for the web application. The component that is passed 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './RTT.css';
 import anime from 'animejs';
 import Switch from '../Switch/Switch';
-import { Animate, AnimateGroup } from 'react-simple-animate';
 
 // export class RTT extends React.Component {
 
@@ -16,51 +15,51 @@ import { Animate, AnimateGroup } from 'react-simple-animate';
 
 
 
-function drawLine() {
-    anime({
-        targets: '.single_network_line',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        //easing: 'cubicBezier(.5, .05, .1, .3)',
-        easing: 'linear',
-        duration: 1800,
-        endDelay: 1000,
-        delay: 500,
-        loop: true,
-        direction: 'alternate',
+// function drawLine() {
+//     anime({
+//         targets: '.single_network_line',
+//         strokeDashoffset: [anime.setDashoffset, 0],
+//         //easing: 'cubicBezier(.5, .05, .1, .3)',
+//         easing: 'linear',
+//         duration: 1800,
+//         endDelay: 1000,
+//         delay: 500,
+//         loop: true,
+//         direction: 'alternate',
 
-    });
-}
+//     });
+// }
 
-function rttSpinFade() {
-    anime({
-        targets: '#spinner_upper',
-        easing: 'linear',
-        delay: 6100,
-        duration: 500,
-        opacity: 0,
-        loop: true,
-    });
-}
+// function rttSpinFade() {
+//     anime({
+//         targets: '#spinner_upper',
+//         easing: 'linear',
+//         delay: 6100,
+//         duration: 500,
+//         opacity: 0,
+//         loop: true,
+//     });
+// }
 
 
-function rttSpinStart(value) {
-    let spin = anime();
-    if (value === true) {
+// function rttSpinStart(value) {
+//     let spin = anime();
+//     if (value === true) {
 
-        spin = anime({
-            targets: '#spinner_upper',
-            strokeDashoffset: [anime.setDashoffset, 0],
-            easing: 'linear',
-            duration: 5600,
-            delay: 500,
-            endDelay: 500,
-            loop: true,
-        });
-    } else {
-        spin.pause();
-    }
+//         spin = anime({
+//             targets: '#spinner_upper',
+//             strokeDashoffset: [anime.setDashoffset, 0],
+//             easing: 'linear',
+//             duration: 5600,
+//             delay: 500,
+//             endDelay: 500,
+//             loop: true,
+//         });
+//     } else {
+//         spin.pause();
+//     }
 
-}
+// }
 
 
 // function rttSetupCircle() {
@@ -86,32 +85,32 @@ function rttSpinStart(value) {
 // }
 
 
-function runAnimation(value) {
-    drawLine(value);
-    rttSpinStart(value);
-    rttSpinFade(value);
+// function runAnimation(value) {
+//     drawLine(value);
+//     rttSpinStart(value);
+//     rttSpinFade(value);
 
 
-}
+// }
 
 
-function pauseAnimation(value) {
-    console.log("paused");
-    rttSpinStart(value);
-    rttSpinFade(value);
-    drawLine(value);
-    //rttSetupLine();
-    // rttSetupCircle();
-}
+// function pauseAnimation(value) {
+//     console.log("paused");
+//     rttSpinStart(value);
+//     rttSpinFade(value);
+//     drawLine(value);
+//     //rttSetupLine();
+//     // rttSetupCircle();
+// }
 
 
-function showStuff(value){
-    if(value === true){
-      return 'True';
-    }else{
-      return 'False';
-    }
-  }
+// function showStuff(value){
+//     if(value === true){
+//       return 'True';
+//     }else{
+//       return 'False';
+//     }
+//   }
 
 
 

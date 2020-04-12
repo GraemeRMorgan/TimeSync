@@ -1,7 +1,6 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import './NodeGame.css';
 import { Box } from '../Box/Box';
-import Switch from '../Switch/Switch';
 
 /**
  * This Componenet renders a a game interpretation of time synchronization
@@ -39,7 +38,6 @@ function NodeGame() {
     // }
 
     //render() {
-        const [value, setValue] = useState(true);
         return (
             
             <div>

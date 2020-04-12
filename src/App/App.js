@@ -1,7 +1,6 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import './App.css';
 import Title from '../Title/Title';
-import GraphDraw from '../GraphDraw/GraphDraw';
 import NodeGame from '../NodeGame/NodeGame';
 import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
 import NetworkMap from '../NetworkMap/NetworkMap';
@@ -10,7 +9,6 @@ import TokenNetwork from '../TokenNetwork/TokenNetwork';
 import Hourglass from '../Hourglass/Hourglass';
 import PingSim from '../PingSim/PingSim';
 import PingSame from '../PingSame/PingSame'
-import Switch from '../Switch/Switch';
 
 /**
  * This is the 'Driver' componenet for the rest of the app. 
@@ -22,13 +20,7 @@ import Switch from '../Switch/Switch';
  */
 
 
-    function showStuff(value){
-      if(value === true){
-        return 'True';
-      }else{
-        return 'False';
-      }
-    }
+   
 
   //class App extends React.Component{
     function App(){
@@ -42,7 +34,6 @@ import Switch from '../Switch/Switch';
       //For Switch
       //const [value, setValue] = useState(false);
 
-      const [value, setValue] = useState(true);
 
       return (
         <div>
@@ -57,12 +48,7 @@ import Switch from '../Switch/Switch';
 
 
           
-          <div className="flex-container wrap title">
-            {/*<Switch 
-                isOn={value} 
-                handleToggle={() => setValue(!value)}
-            />*/}
-          </div>
+          
 
           <div className='flex-container wrap ping_same'>
             <PingSame />

@@ -9,9 +9,7 @@ import './GraphDraw.css';
  * This is simply an element for visualization purposes. 
  */
 export class GraphDraw extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    
     /**
      * This function uses Anime.js to control the animation of the network graph.
      */

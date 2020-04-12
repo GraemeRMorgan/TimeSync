@@ -1,7 +1,6 @@
 import React from 'react';
 import './Box.css';
 import { AnimateKeyframes } from 'react-simple-animate';
-import { Sensor } from '../Sensor/Sensor';
 
 /**
  * The purpose of this Component is to generate interactive Nodes that can be clicked and 

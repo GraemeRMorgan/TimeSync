@@ -13,7 +13,6 @@ class LoadingSpinner extends React.Component {
 
 
     spinStart() {
-        let setDuration = this.state.spinnerDuration;
           anime({
             targets: '#spinner_main_upper',
             strokeDashoffset: [anime.setDashoffset, 0],

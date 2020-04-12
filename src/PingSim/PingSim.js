@@ -2,7 +2,6 @@ import React from 'react';
 import './PingSim.css';
 import Ping from 'ping.js';
 import anime from 'animejs';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
 class PingSim extends React.Component {
