@@ -3,133 +3,26 @@ import './RTT.css';
 import anime from 'animejs';
 import Switch from '../Switch/Switch';
 
-// export class RTT extends React.Component {
-
-
-// constructor(props) {
-//     super(props);
-
-//     this.runAnimation = this.runAnimation.bind(this);
-// }
-
-
-
-
-// function drawLine() {
-//     anime({
-//         targets: '.single_network_line',
-//         strokeDashoffset: [anime.setDashoffset, 0],
-//         //easing: 'cubicBezier(.5, .05, .1, .3)',
-//         easing: 'linear',
-//         duration: 1800,
-//         endDelay: 1000,
-//         delay: 500,
-//         loop: true,
-//         direction: 'alternate',
-
-//     });
-// }
-
-// function rttSpinFade() {
-//     anime({
-//         targets: '#spinner_upper',
-//         easing: 'linear',
-//         delay: 6100,
-//         duration: 500,
-//         opacity: 0,
-//         loop: true,
-//     });
-// }
-
-
-// function rttSpinStart(value) {
-//     let spin = anime();
-//     if (value === true) {
-
-//         spin = anime({
-//             targets: '#spinner_upper',
-//             strokeDashoffset: [anime.setDashoffset, 0],
-//             easing: 'linear',
-//             duration: 5600,
-//             delay: 500,
-//             endDelay: 500,
-//             loop: true,
-//         });
-//     } else {
-//         spin.pause();
-//     }
-
-// }
-
-
-// function rttSetupCircle() {
-//     anime({
-//         targets: '#spinner_upper',
-//         strokeDashoffset: [anime.setDashoffset, 317.5],
-//         easing: 'linear',
-//         duration: 0,
-//         loop: false,
-//         autoplay: true
-//     });
-// }
-
-// function rttSetupLine() {
-//     anime({
-//         targets: '.single_network_line',
-//         strokeDashoffset: [anime.setDashoffset, 630],
-//         easing: 'linear',
-//         duration: 0,
-//         loop: false,
-//         autoplay: true
-//     });
-// }
-
-
-// function runAnimation(value) {
-//     drawLine(value);
-//     rttSpinStart(value);
-//     rttSpinFade(value);
-
-
-// }
-
-
-// function pauseAnimation(value) {
-//     console.log("paused");
-//     rttSpinStart(value);
-//     rttSpinFade(value);
-//     drawLine(value);
-//     //rttSetupLine();
-//     // rttSetupCircle();
-// }
-
-
-// function showStuff(value){
-//     if(value === true){
-//       return 'True';
-//     }else{
-//       return 'False';
-//     }
-//   }
-
-
-
+/**
+ * This file utilizes functional hooks in order to be more easily
+ * driven by a toggle input. The logic here is all within a function, opposed
+ * to a class componenet. 
+ * 
+ * This function simply shows a simulation of how RTT is calculated. 
+ */
 function RTT() {
-    //render() {
+    /**
+     * This const contains the state of the toggle element that controls 
+     * the animation.
+     */
     const [value, setValue] = useState(false);
 
-    // if (value === true) {
-    //     runAnimation(value);
-    // } else {
-    //     pauseAnimation(value);
-    // }
-
+    //This contains the animation information for the line between the nodes.
     let drawLine = anime({
         targets: '.single_network_line',
         strokeDashoffset: [anime.setDashoffset, 0],
-        //easing: 'cubicBezier(.5, .05, .1, .3)',
         easing: 'linear',
-        autoplay:false,
+        autoplay: false,
         duration: 1500,
         endDelay: 300,
         delay: 200,
@@ -137,6 +30,7 @@ function RTT() {
         direction: 'alternate',
     });
 
+    //This contains the animation information for the spinner.
     let spin = anime({
         targets: '#spinner_upper',
         strokeDashoffset: [anime.setDashoffset, 0],
@@ -148,13 +42,16 @@ function RTT() {
         loop: true,
     });
 
+    /**
+     * This block contains logic for the toggle switch in the return statement.
+     */
     if (value === true) {
         spin.play();
         drawLine.play();
         setTimeout(() => { spin.pause(); }, 4000);
         setTimeout(() => { drawLine.pause(); }, 4000);
     }
-    if(value === false){
+    if (value === false) {
         drawLine.pause();
         spin.pause();
     }
@@ -230,21 +127,16 @@ function RTT() {
                         <polyline className="single_network_line" points="91.1 152.6 91.1 224.6 577.1 224.6 577.1 152.6" />
                     </g>
                 </svg>
-                {/*<button className="button button_run_rtt" onClick={runAnimation}>RTT Simulation</button>*/}
                 <div className="flex-container wrap rtt_toggle">
-                    {/*<h1>{showStuff(value)}</h1>*/}
+                    {/*This switch contains props for the state. */}
                     <Switch
                         isOn={value}
                         handleToggle={() => setValue(!value)}
                     />
                 </div>
-
-
-
             </div>
         </div>
     );
-    //Render brace }
 }
 
 export default RTT;

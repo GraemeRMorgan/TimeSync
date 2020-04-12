@@ -2,12 +2,17 @@ import React from 'react';
 import anime from 'animejs';
 import './LoadingSpinner.css';
 
+/**
+ * This component renders a simple spinner element. This can be used as 
+ * a loading icon, or to show the progress of an action.
+ * 
+ * NOTE: This is not used within the application.
+ */
 class LoadingSpinner extends React.Component {
     constructor(props) {
         super(props);
         this.state = {spinnerDuration: this.props.duration};
-        this.setState ({spinnerDuration: this.props.duration});
-
+        //this.setState ({spinnerDuration: this.props.duration});
         this.spinStart = this.spinStart.bind(this);
     }
 
@@ -17,20 +22,14 @@ class LoadingSpinner extends React.Component {
             targets: '#spinner_main_upper',
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'linear',
-            //duration: setDuration,
             duration: 2000,
             loop: false,
         });
     }
 
-   
-
-    
-
     componentDidMount() {
         this.spinStart();
     }
-
 
     render() {
         return (

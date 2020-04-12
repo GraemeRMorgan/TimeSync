@@ -2,12 +2,14 @@ import React from 'react';
 import anime from 'animejs';
 import './TokenNetwork.css';
 
-
+/**
+ * This component returns a simple interconnected network. The goal was to 
+ * visualize a network with a rotating leader, but it will simply be used 
+ * as a visual element, as the animation was causing issues. 
+ */
 export class TokenNetwork extends React.Component {
     
-
-
-    //First animation
+    //First animation lines
     drawLineUL() {
         anime({
             targets: '.lines_toUL',
@@ -22,7 +24,7 @@ export class TokenNetwork extends React.Component {
         });
     }
 
-    //Second animation
+    //Second animation lines
     drawLineLL() {
         anime({
             targets: '.lines_toLL',
@@ -37,7 +39,7 @@ export class TokenNetwork extends React.Component {
         });
     }
 
-    //Third animation
+    //Third animation lines
     drawLineUR() {
         anime({
             targets: '.lines_toUR',
@@ -52,7 +54,7 @@ export class TokenNetwork extends React.Component {
         });
     }
 
-    //Fourth animation
+    //Fourth animation lines
     drawLineLR() {
         anime({
             targets: '.lines_toLR',
@@ -67,6 +69,7 @@ export class TokenNetwork extends React.Component {
         });
     }
 
+    // Mount on render.
     animationController(){
         this.drawLineUL();
         setTimeout(() => {  this.drawLineLL(); }, 4000);
@@ -74,6 +77,7 @@ export class TokenNetwork extends React.Component {
         setTimeout(() => {  this.drawLineLR(); }, 12000);
     }
 
+    // Animation defaults
     animationPreset(){
         anime({
             targets: ['.lines_toUL', '.lines_toLL', '.lines_toUR', '.lines_toLR'],
@@ -83,23 +87,12 @@ export class TokenNetwork extends React.Component {
         });
     }
 
-    
-
-
-
     componentDidMount(){
-        // this.drawLineUL();
-        // this.drawLineLL();
-        // this.drawLineUR();
-        // this.drawLineLR();
-        //this.scaleCircleUL();
-        // this.animationSet();
         this.animationController();
-        this.animationPreset();
-        
+        this.animationPreset(); 
     }
 
-
+    // Return SVG nodes and animated lines. 
     render() {
         return (
             <div className="flex-container wrap">
@@ -139,22 +132,7 @@ export class TokenNetwork extends React.Component {
         );
     }
 }
-
 export default TokenNetwork;
 
 
 
-
-    // scaleCircleUL(){
-    //     anime({
-    //         targets: '#circleUL',
-    //         scale: 1.5,
-    //         duration: 500, 
-    //         delay: 100,
-    //         loop: false,
-    //         direction: 'alternate', 
-    //         easing: 'cubicBezier(.5, .05, .1, .3)',
-    //     })
-    // }
-
-    //Second animation

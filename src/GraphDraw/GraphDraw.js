@@ -4,9 +4,10 @@ import './GraphDraw.css';
 
 /**
  * This Component draws a stylized network graph with nodes and various div objects
- * that act as the communication link between the time server and various nodes. 
+ * that act as the communication link between the time server and various nodes. This 
+ * is simply an element for visualization purposes. 
  * 
- * This is simply an element for visualization purposes. 
+ * NOTE: This component is not used in the applicatin.
  */
 export class GraphDraw extends React.Component {
     
@@ -42,18 +43,14 @@ export class GraphDraw extends React.Component {
           });
     }
 
-    /**
-     * This ensures that all functions are loaded when the component is called.
-     */
+    // This function calls animation() and followPathAnimation() when this component is rendered.
     componentDidMount() {
         this.animation();
         this.followPathAnimation();
     }
 
-    /**
-     * The render/return functions return the Vector SVG. The onClick will restarts the 
-     * animation.
-     */
+    
+    // The render/return functions return the Vector SVG. The onClick() will restarts the animation.
     render() {
         return (
             <div>
@@ -74,13 +71,9 @@ export class GraphDraw extends React.Component {
                         <circle id="node5" class="nodeDraw" cx="474.57" cy="59.56" r="6.28" />
                         
                     </svg>
-                    {/*<div className='boxy' onClick={this.followPathAnimation}></div>*/}
-
                 </div>
-
             </div >
         );
     }
 }
-//  Return the GraphDraw Component Class for use outside of this file.
 export default GraphDraw;

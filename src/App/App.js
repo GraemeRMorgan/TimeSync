@@ -11,91 +11,58 @@ import PingSim from '../PingSim/PingSim';
 import PingSame from '../PingSame/PingSame'
 
 /**
- * This is the 'Driver' componenet for the rest of the app. 
+ * This is the driver function for the rest of the app. 
  * This structure is exported to the index.js file and is then
  * rendered in the browser. 
  * 
- * This component contains all of the primary components in the 
+ * This fucntional component contains all of the primary components in the 
  * application. 
  */
 
+function App() {
 
-   
+  return (
+    <div>
 
-  //class App extends React.Component{
-    function App(){
+      <div className='flex-container wrap hourglass'>
+        <Hourglass />
+      </div>
 
-    // constructor(props){
-    //   super(props);
+      <div className='flex-container wrap title'>
+        <Title />
+      </div>
 
-    //   const [value, setValue] = useState(false);
-    // }
-    //render() {
-      //For Switch
-      //const [value, setValue] = useState(false);
+      <div className='flex-container wrap ping_same'>
+        <PingSame />
+      </div>
 
+      <div className='flex-container wrap ping_sim'>
+        <PingSim />
+      </div>
 
-      return (
-        <div>
+      <div className='flex-container wrap simulation'>
+        <NetworkMap />
+      </div>
 
-          <div className='flex-container wrap hourglass'>
-            <Hourglass />
-          </div>
+      <div className='flex-container wrap game_1'>
+        <NodeGame />
+      </div>
 
-          <div className='flex-container wrap title'>
-            <Title />
-          </div>
+      <div className='flex-container wrap rtt'>
+        <RTT />
+      </div>
 
-
-          
-          
-
-          <div className='flex-container wrap ping_same'>
-            <PingSame />
-          </div>
-
-          <div className='flex-container wrap ping_sim'>
-            <PingSim />
-          </div>
-
-          
+      <div className='flex-container wrap game_1'>
+        <NodeGameDelay />
+      </div>
 
 
-          
-          <div className='flex-container wrap simulation'>
-            <NetworkMap />
-          </div>
+      <div className='flex-container wrap token'>
+        <TokenNetwork />
+      </div>
 
-          <div className='flex-container wrap game_1'>
-            <NodeGame />
-          </div>
-
-          
-          <div className='flex-container wrap rtt'>
-            <RTT />
-          </div>
-
-
-          <div className='flex-container wrap game_1'>
-            <NodeGameDelay />  
-          </div>
-
-
-          <div className='flex-container wrap token'>
-            <TokenNetwork />
-          </div>
-
-
-           {/*}
-           <div className='flex-container wrap graph'>
-            <GraphDraw />
-          </div>
-          */}
-          
-      
-        </div>
-      )
-    //}
-  }
+    </div>
+  )
+}
 
 export default App;

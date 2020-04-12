@@ -3,11 +3,8 @@ import './NetworkMap.css';
 import anime from 'animejs';
 
 /**
- * This component will include a TIMESERVER that includes
- * the current time and a node that wishes to receive the current time.
- * 
- * onClick of the node, it wil delay, then display the time. During this
- * time, the timeServer time will increase.  
+ * This component is not functional and only displays a visualization of how a time
+ * server interacts with external nodes. 
  */
 
 export class Simulation extends React.Component {
@@ -15,10 +12,8 @@ export class Simulation extends React.Component {
     constructor(props) {
         super(props);
         this.increaseTime = this.increaseTime.bind(this);
-        // this.commAnimation = this.commAnimation.bind(this);
         this.countUp = this.countUp.bind(this);
         this.drawLines2 = this.drawLines2.bind(this);
-        this.globalPause = this.globalPause.bind(this);
     }
 
     /**
@@ -38,27 +33,14 @@ export class Simulation extends React.Component {
         this.increaseTime();
     }
 
-    countUpStop() {
-
-    }
-
     /**
-     * Animation to control the communication signal.
+     * Al animated lines needed their own driver functions, as each line is animated at a different
+     * rate. There is a lot of repetition from lines 40 to 156. Fundamentally, these are identical
+     * functions with different values. Hardcoding values is sometimes essential in web development,
+     * especially when it involves a constant variable, such as a visual image that is never going 
+     * to change. I would prefer to have the hard coded values in the functions, rather than where 
+     * the functions are called. 
      */
-    // commAnimation() {
-    //     let commAnime = anime({
-    //         targets: '.commSignal',
-    //         left: '240px',
-    //         loop: 1,
-    //         backgroundColor: '#22D970',
-    //         borderRadius: ['0%', '50%'],
-    //         easing: 'easeInOutQuad'
-    //     });
-    // }
-
-
-
-    //Map network animation synchronized.
     drawLines1() {
         anime({
             targets: '#path1',
@@ -176,32 +158,9 @@ export class Simulation extends React.Component {
 
         });
     }
-
-    //Button Handler - use as reference for the next one. 
-    globalPause() {
-        // this.drawLines8.play();
-        // this.drawLines9.play();
-
-        let drawLines = anime({
-            targets: '#path9',
-            strokeDashoffset: [anime.setDashoffset, 0],
-            easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 2000,
-            delay: function (el, i) { return i * 250 },
-            endDelay: 400,
-            loop: true,
-            direction: 'alternate',
-
-        });
-        drawLines.play();
-    }
-
-
-    /**
-     * Mount the enclosed functions when this componenet is called.
-     */
+    
+    // sMount the enclosed functions when this componenet is called. 
     componentDidMount() {
-        //this.drawLines();
         this.drawLines1();
         this.drawLines2();
         this.drawLines3();
@@ -215,6 +174,12 @@ export class Simulation extends React.Component {
     }
 
 
+    /**
+     * This render function returns the SVG elements. I should note that I did not write the <polygon> code.
+     * I designed the map elements and positioned the nodes in vector image software. I then exported as 
+     * SVG text. That SVG text is what you see below - although, there has been adjustments to the original
+     * code. I have added custom className's and id's win order to style the elements.
+     */
     render() {
         return (
             <div className='flex-container wrap'>
@@ -274,12 +239,10 @@ export class Simulation extends React.Component {
                     </svg>
 
                 </div>
-                {/*<button onClick={this.globalPause}>Start</button>*/}
             </div>
         );
     }
 }
 
-//Export the Component for use outside of this file. 
 export default Simulation;
 

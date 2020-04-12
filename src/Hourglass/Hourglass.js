@@ -1,13 +1,19 @@
 import React from 'react';
 import anime from 'animejs';
 import './Hourglass.css';
-
+/**
+ * This component displays the Hourglass logo at the top of the application.
+ * This logo was created in illustrator and exported as an SVG. This is much
+ * more efficient than a raster image, as this logo is created in a fraction 
+ * of the size.
+ */
 class Hourglass extends React.Component {
     constructor(props) {
         super(props);
         this.spinHour = this.spinHour.bind(this);
     }
 
+    // If the logo is clicked, it will animate a 360 rotation.
     spinHour() {
         anime({
             targets: '.hourglass_container',
@@ -17,13 +23,13 @@ class Hourglass extends React.Component {
           });
     }
 
-
+    // Returns the SVG logo with an onClick() handler.
     render() {
         return (
             <div className='flex-container wrap'>
                 <div className='hourglass_container' onClick={this.spinHour}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.23 114.58">
 
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.23 114.58">
                         <g id="Layer_3" data-name="Layer 3">
                             <path className="hourglass_color" d="M421.6,286.37l-2-7.74c9.83-2.59,16.44-9.5,16.44-17.18V237H387v24.46c0,7.68,6.61,14.59,16.44,17.18l-2,7.74C388,282.83,379,272.82,379,261.45V229h65v32.46C444,272.82,435,282.83,421.6,286.37Z" transform="translate(-375.05 -225.95)" />
                             <path className="hourglass_color" d="M444,334.85H379V303.06c0-11.16,9-21,22.42-24.43l2,7.74c-9.82,2.54-16.42,9.24-16.42,16.69v23.79h49V303.06c0-7.45-6.6-14.15-16.42-16.69l2-7.74C435,282.09,444,291.9,444,303.06Z" transform="translate(-375.05 -225.95)" />
@@ -34,10 +40,10 @@ class Hourglass extends React.Component {
                             <rect className="sand" x="14.19" y="75.13" width="44.39" height="24.78" />
                         </g>
                     </svg>
+
                 </div>
             </div>
         );
     }
 }
-
 export default Hourglass;

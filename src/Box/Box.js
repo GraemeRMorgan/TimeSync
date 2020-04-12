@@ -21,9 +21,8 @@ export class Box extends React.Component {
     }
 
     /**
-     * This method should monitor the position of the div and send this info
-     * via props to <Sensor />. In that class we can monitor all of the collisions
-     * to see if 
+     * This render function animates the nodes that are used in the NodeGame 
+     * component. This is using the react-simple-animate opposed to anime.js.
      */
     render() {
         return (

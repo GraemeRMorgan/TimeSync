@@ -3,7 +3,14 @@ import './PingSame.css';
 import Ping from 'ping.js';
 import anime from 'animejs';
 
-
+/**
+ * This component shows that there are multiple routes to the same server
+ * and this fact affects network speeds. 
+ * 
+ * This calls the same UNBC server and each time the RTT has a different RTT.
+ * 
+ * The intention is to show that average RTT's will always be unreliable.
+ */
 class PingSame extends React.Component {
     constructor(props) {
         super(props);
@@ -24,6 +31,7 @@ class PingSame extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    // This function pings the same UNBC server 3 times. 
     handleClick() {
         this.p.ping("https://www.unbc.ca/", (err, data) => {
             if (err) {
@@ -47,19 +55,26 @@ class PingSame extends React.Component {
                 console.log('There has been an error calling ping.js', err);
             } else {
                 this.setState({ unbc3: data });
+                /**
+                 * After 3 pings and a delay of 500ms, spinDriver() is called and runs the 
+                 * visual spinners.
+                 */
                 setTimeout(() => { this.spinDriver(); }, 500);
             }
         })
     }
 
-
+    // Drives the spinners. 
     spinDriver() {
         setTimeout(() => { this.spinStart(); }, this.props.delay * 3000);
         setTimeout(() => { this.spinStart2(); }, this.props.delay * 3000);
         setTimeout(() => { this.spinStart3(); }, this.props.delay * 3000);
     }
 
-
+    /**
+     * The following 3 functions animate the spinners based on the values from the 
+     * state in the constructor for unbc1,2,3.
+     */
     spinStart() {
         let setDuration = 320 - this.state.unbc1;
         anime({
@@ -70,7 +85,6 @@ class PingSame extends React.Component {
             loop: false,
         });
     }
-
     spinStart2() {
         let setDuration = 320 - this.state.unbc2;
 
@@ -94,6 +108,7 @@ class PingSame extends React.Component {
     }
 
 
+    // This sets the default position of the spinners.
     spinSetup() {
         anime({
             targets: '#ping_same1, #ping_same2, #ping_same3',
@@ -105,18 +120,15 @@ class PingSame extends React.Component {
         });
     }
 
-    calcualateTime1(){
-        return this.state.unbc1;
-    }
-
-
-
-
-
+    // This is called when the component is rendered.
     componentDidMount() {
         this.spinSetup();
     }
 
+    /**
+     * This renders the final visual. Some calculations are done in the JSX code. On lines 147 to 149, the 
+     * RTT/2 is calculated in the <li> elements rather than calling a function.
+     */
     render() {
         return (
             <div>

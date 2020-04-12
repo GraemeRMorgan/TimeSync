@@ -8,11 +8,6 @@ import './Title.css';
  * which is why I am using SVG as opposed to a raster file, like a PNG or JPG. 
  */
 class Title extends React.Component {
-    
-    /**
-     * This animation function utilizes Anime.js to draw the title of the application
-     * using the vector paths of the svg file. 
-     */
     animation() {
         anime({
             targets: '.cls-1, .cls-2, .cls-3',
@@ -23,7 +18,6 @@ class Title extends React.Component {
 
         });
     }
-
 
     /**
      * This function ensures that the animation function mounts upon calling the Title 
@@ -63,6 +57,5 @@ class Title extends React.Component {
         );
     }
 }
-
 //Export the Component Class Title for use outside of this file.
 export default Title;

@@ -1,6 +1,12 @@
 import React from 'react';
 import './Switch.css';
 
+/**
+ * This is a simple switch toggle for use in the RTT file.
+ * 
+ * Reference: https://upmostly.com/tutorials/build-a-react-switch-toggle-component
+ * Accessed: March, 2020
+ */
 const Switch = ({ isOn, handleToggle }) => {
     return (
         <>

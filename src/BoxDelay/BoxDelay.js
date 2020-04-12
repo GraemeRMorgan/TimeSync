@@ -13,18 +13,14 @@ export class BoxDelay extends React.Component {
 
     /**
      * The main constructor for this Component. Functions must be bound in the constructor. 
-     * 
-     * Pause is defaulted to false so that the nodes will move.
-     * incomingDelay is simply here to make the code more readable. It could have also been
-     * called using 'this.props.delay' as the delay is sent in the div from the NodeDelay 
-     * component.
+     * Functions that are called within the component must be instantiated here. There are 
+     * some exceptions, for example, the componentDidMount() function does not have to be 
+     * declared in the constructor.
      */
     constructor(props) {
         super(props);
         this.state = { pause: false};
         this.incomingDelay = this.props.delay;
-
-        //These are the functions within this component.
         this.togglePause = this.togglePause.bind(this);
         this.loadingDiv = this.loadingDiv.bind(this);
         this.resumeAnimation = this.resumeAnimation.bind(this);
@@ -32,10 +28,8 @@ export class BoxDelay extends React.Component {
 
 
     /**
-     * This function is the primary Event Handler for the onClick event called in the outer
-     * div in the render function at the bottom of this file. This is a simple function that
-     * sets the pause state. If the state is TRUE, then is calls loadingDiv() and runs the 
-     * delay for the animation.
+     * This is a simple function that sets the pause state. If the state is TRUE, then is calls 
+     * loadingDiv() and runs the delay for the animation.
      */
     togglePause() {
         if(this.state.pause === false){
@@ -47,7 +41,7 @@ export class BoxDelay extends React.Component {
     }
 
     /**
-     * setTimeout() expects a function and resumeAnimation() simply sets the pause state after
+     * setTimeout() in togglePause() expects a function and resumeAnimation() simply sets the pause state after
      * the delay. 
      */
     resumeAnimation(){
@@ -62,10 +56,6 @@ export class BoxDelay extends React.Component {
         let tempDelay = this.props.delay*1000;
         let tempNodeId = document.getElementById(this.props.id);
         
-        /**
-         * The anime.js library is used for the animation on the spinner. More documentation for 
-         * this library can be found at https://github.com/juliangarnier/anime/
-         */ 
         anime({
             targets: tempNodeId,
             rotate: '+=360deg',
@@ -77,9 +67,7 @@ export class BoxDelay extends React.Component {
 
 
     /**
-     * This render function controls the animation for the Nodes using the <AnimatedKeyframes/> 
-     * external component. This animates the nodes 600px from -300px to +300px, which is set in
-     * the CSS for the outer div. 
+     * This render function controls the animation for the Nodes.
      * 
      * In the jsx, the outer div is the animated node and the inner div is the spinner wheel. 
      * 
@@ -109,7 +97,6 @@ export class BoxDelay extends React.Component {
             </div>
         )
     }
-
 }
 
 
