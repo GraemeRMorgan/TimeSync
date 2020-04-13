@@ -15,10 +15,9 @@ function NodeGame() {
 
         <div>
             <div>
-                <h1 className='flex-container wrap h1'>Time Synchronization</h1>
-                <h1 className='flex-container wrap p'>Click on the nodes to pause and play.</h1>
+                <h2 className='flex-container wrap instructions'>Click on the nodes to pause and play.</h2>
             </div>
-            <div>
+            <div className="game_container">
                 <Box className="master_box" />
                 <hr className="coolLine"></hr>
                 <Box className="box_1" delay={.3} />

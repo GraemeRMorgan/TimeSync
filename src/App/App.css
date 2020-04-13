@@ -10,7 +10,7 @@
   padding: 0px;
   margin: 0;
   list-style: none;
-  border: 1px solid silver;
+  {/*border: 1px solid silver;*/}
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -33,7 +33,29 @@
   padding-bottom: 1em;
   margin-left: 15em;
   margin-right: 15em;
-  
+}
+
+.subtitles {
+  padding-top: 50px;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.writing {
+  align-items:left;
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 8em;
+  margin-right: 8em;
+  text-align:left;
+}
+
+h3 {
+  color: #84F7AE;
+  font-size: x-large;
+
 }
 
 .graph {
@@ -43,7 +65,8 @@
 }
 
 .token {
-  padding: 100px;
+  padding-left: 50px;
+  padding-right:50px;
   margin-left: 50px;
   margin-right:50px;
 }
@@ -63,9 +86,10 @@
 }
 
 .simulation {
-  padding: 0px;
-  margin-left: 50px;
-  margin-right:50px;
+  padding-left: 5em;
+  padding-right: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 
@@ -99,3 +123,4 @@ hr.coolLine{
   border-top: 1px solid #572DFB;
   width: 720px;
 }
+

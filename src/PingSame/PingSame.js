@@ -132,7 +132,6 @@ class PingSame extends React.Component {
     render() {
         return (
             <div>
-                <h1>Server Time : 12:00</h1>
                 <button className="button button_ping_same" onClick={this.handleClick}>Ping Server</button>
 
                 <div className="flex-container wrap">

@@ -7,13 +7,6 @@
     overflow:hidden;
 }
 
-.rtt_container {
-    padding-left: 100px;
-    padding-right:100px;
-    margin: 100px;
-    height: 600px;
-    overflow: hidden;
-}
 
 .progress {
     width: 82%;
@@ -76,3 +69,10 @@
     margin: 10px;
     padding: 10px;
   }
+
+  .rtt_container {
+    padding-left: 100px;
+    padding-right:100px;
+    margin: 100px;
+    height: 400px;
+}
