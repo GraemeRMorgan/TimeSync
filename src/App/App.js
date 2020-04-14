@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Title from '../Title/Title';
 import NodeGame from '../NodeGame/NodeGame';
 import NodeGameDelay from '../NodeGameDelay/NodeGameDelay';
 import NetworkMap from '../NetworkMap/NetworkMap';
@@ -34,7 +33,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
         <h3>
         Have you ever considered the fact that every time you ask someone for the time, 
         they are actually lying? Perhaps not consciously lying, but their answer is always 
@@ -47,7 +46,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Time Servers</h2>
         <h3>
         Consider the following network map. All of these nodes must ping a central time server 
@@ -62,7 +61,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Synchronization Game</h2>
 
         <h3>
@@ -82,7 +81,7 @@ function App() {
 
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Return Trip Time</h2>
 
         <h3>
@@ -97,7 +96,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Ping</h2>
 
         <h3>
@@ -111,7 +110,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Ping Same</h2>
 
         <h3>
@@ -133,7 +132,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Synchronization with Delay</h2>
         <h3>
         Now, try the same synchronization game, but this time the nodes have an associated delay. 
@@ -146,7 +145,7 @@ function App() {
       </div>
 
       <div className='flex-container wrap writing'>
-      <hr className="coolLine"></hr>
+      <hr className='flex-container wrap line' id="coolLine" ></hr>
       <h2 className='flex-container wrap subtitles'>Conclusion</h2>
         <h3>
         Distributed computing has several simple yet complex issues that offer outlets for continued 

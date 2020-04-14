@@ -10,7 +10,7 @@
   padding: 0px;
   margin: 0;
   list-style: none;
-  {/*border: 1px solid silver;*/}
+  /**border: 1px solid silver;**/
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -65,10 +65,10 @@ h3 {
 }
 
 .token {
-  padding-left: 50px;
-  padding-right:50px;
-  margin-left: 50px;
-  margin-right:50px;
+  padding-left: 100px;
+  padding-right:100px;
+  margin-left: 200px;
+  margin-right:200px;
 }
 
 .hourglass {
@@ -119,8 +119,10 @@ body {
 }
 
 
-hr.coolLine{
+hr#coolLine{
   border-top: 1px solid #572DFB;
   width: 720px;
+  margin-right:200px;
+  margin-left:200px;
 }
 
